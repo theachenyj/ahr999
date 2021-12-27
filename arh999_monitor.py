@@ -25,7 +25,7 @@ elif arh999 >= 0.45 and arh999 < 1.2:
 else:
 	action = '休息。'
 
-message = f'【BTC 囤币指标监控（本地测试）】时间: {data_time}\narh999: {arh999}\n{action}'
+message = f'【BTC 囤币指标监控】时间: {data_time}\narh999: {arh999}\n{action}'
 
 # 推送discord
 payload = {
