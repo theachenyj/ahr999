@@ -5,7 +5,7 @@ from datetime import datetime
 url = 'https://dncapi.fxhapp.com/api/v2/index/arh999?code=bitcoin&webp=1'
 
 # Webhook地址
-webhook_url = 'https://discord.com/api/webhooks/925390672872235038/stHoEulrzOw4XO2Feh4T6jR9Kvq0Fd1YGUP3FME-sGC5kTSqX60k7tgaLL__iarn711w'
+webhook_url = 'https://discord.com/api/webhooks/925392888312004658/yhnDZr3oyl-V9P1Vh89zbPBZAcdsVEWZuv9AGMHQRr8_6I2oW84Q21nhlQxGhqV11vlS'
 
 # 网络请求
 r = requests.get(url)
