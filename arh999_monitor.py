@@ -5,7 +5,8 @@ from datetime import datetime
 url = 'https://dncapi.fxhapp.com/api/v2/index/arh999?code=bitcoin&webp=1'
 
 # Webhook地址
-webhook_url = 'https://hooks.slack.com/services/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'
+# webhook_url = 'https://hooks.slack.com/services/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'
+webhook_url = 'https://discord.com/api/webhooks/925697346682097684/1wSJccoHQHxI_Wd9gNLl19r_dhs9iiyGfx_0_5T5WMyWXY1aXJQG3iUIIyHKywVgJb6E'
 
 # 网络请求
 r = requests.get(url)
@@ -27,9 +28,10 @@ else:
 
 message = f'【BTC 囤币指标监控】时间: {data_time}\narh999: {arh999}\n{action}'
 
-# 推送slack
+# 推送discord
 payload = {
-        "text": message
+        "username": "Monitor Cat",
+        "content": message
     }
 requests.post(webhook_url, json=payload)
 
