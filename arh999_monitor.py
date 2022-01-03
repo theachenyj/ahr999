@@ -4,10 +4,11 @@ from datetime import datetime
 # api地址
 url = 'https://dncapi.fxhapp.com/api/v2/index/arh999?code=bitcoin&webp=1'
 
-# Webhook地址
-# webhook_url = 'https://hooks.slack.com/services/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'
-webhook_url = 'https://discord.com/api/webhooks/925697346682097684/1wSJccoHQHxI_Wd9gNLl19r_dhs9iiyGfx_0_5T5WMyWXY1aXJQG3iUIIyHKywVgJb6E'
-
+"""# Webhook地址
+webhook_url = 'https://discord.com/api/webhooks/924867380746780703/qV7V-z01cxl9d8ynexLB7Z-LKWeBDyenXboxGYz8HHPheVkmMDsNp3xweaOAWRZ_9wSm'
+"""
+# ifttt arh999 地址
+ifttt_url = 'https://maker.ifttt.com/trigger/arh999/with/key/bVGEDkrCumRST4bL2kYcoC'
 # 网络请求
 r = requests.get(url)
 if r.status_code == 200:
@@ -26,13 +27,10 @@ elif arh999 >= 0.45 and arh999 < 1.2:
 else:
 	action = '休息。'
 
-message = f'【BTC 囤币指标监控】时间: {data_time}\narh999: {arh999}\n{action}'
 
-# 推送discord
+# 推送ifttt
 payload = {
-        "username": "Monitor Cat",
-        "content": message
+        "value1": str(arh999),
+        "value2": action
     }
-requests.post(webhook_url, json=payload)
-
-print(message)
+requests.post(ifttt_url, params=payload)
